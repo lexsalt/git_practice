@@ -1,0 +1,162 @@
+@import url(https://fonts.googleapis.com/css?family=Audiowide);
+
+body {
+  background-color: #333333;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 2vh;
+}
+#bg {
+  background-color: #1B7F79;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+	align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+p {
+  margin: 0;
+  padding: 0;
+  /* text-shadow: black 1px 1px 2px; */
+}
+
+#drum-machine {
+    background-color: darkgrey;
+    display: flex;
+    border: 1px black solid;
+    box-shadow: 2px 2px 4px #000;
+    border-radius: 5px;
+    padding: 1.5vw;
+    }
+    .display {
+      grid-area: display;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      /* align-items: baseline; */
+      background-color: #747F7F;
+      width: 100%;
+      /* height: 100%; */
+      flex-grow: 1;
+      font-family: 'Audiowide', cursive;
+      margin-top: 1vh;
+      margin-bottom: 2vh;
+      /* padding: 1vh 1vw; */
+      text-align: right;
+      color: white;
+      border: 1px black solid;
+      box-shadow:
+        inset 1px 1px 4px 0px #050505,
+        0px 0px 0px 0px #000;
+
+     }
+    .display:hover {
+      background:rgba(56,62,37,1);
+    }
+#display {
+  padding: 0.5vw;
+  /* background-color: blue; */
+}
+    .operator {
+      grid-area: operator;
+      display: flex;
+      flex-direction: column;
+      background-color: #00CCC0;
+      padding: 0;
+      margin: 0;
+    }
+    .number {
+      grid-area: number;
+      background-color: #72F2EB;
+      display: grid;
+      justify-items: center;
+      grid-template-columns: 33.33% 33.33% 33.33%;
+      grid-template-rows: 33.33% 33.33% 33.33%;
+      padding: 0;
+      margin: 0;
+    }
+    .decimal {
+      grid-area: decimal;
+      background-color: #72F2EB;
+      padding: 0;
+      margin: 0;
+    }
+     .zeroToHero {
+      background-color: #72F2EB;
+      grid-area: zeroToHero;
+      padding: 0;
+      margin: 0;
+    }
+    .equal {
+      grid-area: equal;
+      background-color: #1B7F79;
+      padding: 0;
+      margin: 0;
+    }
+    .clear {
+      grid-area: clear;
+      background-color: #FF4858;
+      display: flex;
+      padding: 0;
+      margin: 0;
+    }
+    .operator2 {
+      background-color: #00CCC0;
+      grid-area: operator2;
+      display: flex;
+      padding: 0;
+      margin: 0;
+    }
+    .pad-bank {
+      display: grid;
+      grid-template-columns: 50px 50px 50px 50px;
+      grid-template-rows: 100px 50px 50px 50px 50px 50px;
+      grid-template-areas: 
+        "display display display display"  
+        "clear clear operator2 operator2"
+        "number number number operator" 
+        "number number number operator" 
+        "number number number equal"
+        "zeroToHero zeroToHero decimal equal";
+        justify-content: center;
+        align-content: center;
+        padding: 0;
+        margin: 0;
+    }
+
+.controls-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgrey;
+    flex-grow: 0;
+    }
+
+button {
+  background-color: transparent;
+ display: flex;
+    justify-content: center;
+    align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-size: 2vh;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  opacity: 1;
+}
+button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}

@@ -1,12 +1,317 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
-</head>
-<body>
-    <h1>Hello world!</h1>
-</body>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calc</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+    
+class App extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          decimal: false,
+          currentNum1: [0],
+          result: [0]
+        };
+
+        this.handleKeyPress = this.handleKeyPress.bind(this);
+        this.pressedDigit1 = this.pressedDigit1.bind(this);
+        this.pressedDigit2 = this.pressedDigit2.bind(this);
+        this.pressedDigit3 = this.pressedDigit3.bind(this);
+        this.pressedDigit4 = this.pressedDigit4.bind(this);
+        this.pressedDigit5 = this.pressedDigit5.bind(this);
+        this.pressedDigit6 = this.pressedDigit6.bind(this);
+        this.pressedDigit7 = this.pressedDigit7.bind(this);
+        this.pressedDigit8 = this.pressedDigit8.bind(this);
+        this.pressedDigit9 = this.pressedDigit9.bind(this);
+        this.pressedDigit0 = this.pressedDigit0.bind(this);
+        this.pressedDecimal = this.pressedDecimal.bind(this);
+        this.pressedClear = this.pressedClear.bind(this);
+        this.pressedAdd = this.pressedAdd.bind(this);
+        this.pressedSubstract = this.pressedSubstract.bind(this);
+        this.pressedDivide = this.pressedDivide.bind(this);
+        this.pressedMultiply = this.pressedMultiply.bind(this);
+        this.pressedBackSpace = this.pressedBackSpace.bind(this);
+      }
+      componentDidMount(event) {
+        document.addEventListener("keydown", this.handleKeyPress)
+      }
+      componentWillUnmount() {
+        document.removeEventListener("keydown", this.handleKeyPress)
+      }
+      handleKeyPress(event) {
+        if (event.code === "Digit1" | event.code === "Numpad1") {
+          this.pressedDigit1();
+        }
+        else if (event.code === "Digit2" | event.code === "Numpad2") {
+          this.pressedDigit2();
+        }
+        else if (event.code === "Digit3" | event.code === "Numpad3") {
+          this.pressedDigit3();
+        }
+        else if (event.code === "Digit4" | event.code === "Numpad4") {
+          this.pressedDigit4();
+        }
+        else if (event.code === "Digit5" | event.code === "Numpad5") {
+          this.pressedDigit5();
+        }
+        else if (event.code === "Digit6" | event.code === "Numpad6") {
+          this.pressedDigit6();
+        }
+        else if (event.code === "Digit7" | event.code === "Numpad7") {
+          this.pressedDigit7();
+        }
+        else if (event.code === "Digit8" | event.code === "Numpad8") {
+          this.pressedDigit8();
+        }
+        else if (event.code === "Digit9" | event.code === "Numpad9") {
+          this.pressedDigit9();
+        }
+        else if (event.code === "Digit0" | event.code === "Numpad0") {
+          this.pressedDigit0();
+        }
+        else if (event.code === "Period" | event.code === "NumpadDecimal") {
+          this.pressedDecimal();
+        }
+        else if (event.code === "Multiply" | event.code === "NumpadMultiply") {
+          this.pressedMultiply();
+        }
+        else if (event.code === "Multiply" | event.code === "Backspace") {
+          this.pressedBackSpace();
+        }
+        else if (event.code === "Multiply" | event.code === "Slash") {
+          this.pressedDivide();
+        }
+        console.log("Keycode es " + event.keyCode)
+        console.log("Event es " + event.code)
+      }
+      pressedDigit1() {
+        if (this.state.currentNum1.length === 1 && this.state.currentNum1[0] === 0) {
+          this.setState(state => ({ currentNum1: [1] }))
+
+        } else {
+          let joined = this.state.currentNum1.concat(1);
+          this.setState(state => ({ currentNum1: joined }))
+        }
+      }
+      pressedDigit2() {
+        if (this.state.currentNum1.length === 1 && this.state.currentNum1[0] === 0) {
+          this.setState(state => ({ currentNum1: [2] }))
+
+        } else {
+          let joined = this.state.currentNum1.concat(2);
+          this.setState(state => ({ currentNum1: joined }))
+        }
+      }
+      pressedDigit3() {
+        if (this.state.currentNum1.length === 1 && this.state.currentNum1[0] === 0) {
+          this.setState(state => ({ currentNum1: [3] }))
+
+        } else {
+          let joined = this.state.currentNum1.concat(3);
+          this.setState(state => ({ currentNum1: joined }))
+        }
+      }
+      pressedDigit4() {
+        if (this.state.currentNum1.length === 1 && this.state.currentNum1[0] === 0) {
+          this.setState(state => ({ currentNum1: [4] }))
+
+        } else {
+          let joined = this.state.currentNum1.concat(4);
+          this.setState(state => ({ currentNum1: joined }))
+        }
+      }
+      pressedDigit5() {
+        if (this.state.currentNum1.length === 1 && this.state.currentNum1[0] === 0) {
+          this.setState(state => ({ currentNum1: [5] }))
+
+        } else {
+          let joined = this.state.currentNum1.concat(5);
+          this.setState(state => ({ currentNum1: joined }))
+        }
+      }
+      pressedDigit6() {
+        if (this.state.currentNum1.length === 1 && this.state.currentNum1[0] === 0) {
+          this.setState(state => ({ currentNum1: [6] }))
+
+        } else {
+          let joined = this.state.currentNum1.concat(6);
+          this.setState(state => ({ currentNum1: joined }))
+        }
+      }
+      pressedDigit7() {
+        if (this.state.currentNum1.length === 1 && this.state.currentNum1[0] === 0) {
+          this.setState(state => ({ currentNum1: [7] }))
+
+        } else {
+          let joined = this.state.currentNum1.concat(7);
+          this.setState(state => ({ currentNum1: joined }))
+        }
+
+      }
+      pressedDigit8() {
+        if (this.state.currentNum1.length === 1 && this.state.currentNum1[0] === 0) {
+          this.setState(state => ({ currentNum1: [8] }))
+
+        } else {
+          let joined = this.state.currentNum1.concat(8);
+          this.setState(state => ({ currentNum1: joined }))
+        }
+      }
+      pressedDigit9() {
+        if (this.state.currentNum1.length === 1 && this.state.currentNum1[0] === 0) {
+          this.setState(state => ({ currentNum1: [9] }))
+1
+        } else {
+          let joined = this.state.currentNum1.concat(9);
+          this.setState(state => ({ currentNum1: joined }))
+        }
+      }
+      pressedDigit0() { if (this.state.currentNum1[0] === 0 && this.state.currentNum1.length === 1) {
+        console.log("cannot print 2 zeroes in a row at start")
+      } else {
+        let joined = this.state.currentNum1.concat(0);
+        this.setState(state => ({ currentNum1: joined }))}
+      }
+      pressedDecimal() {
+        if (!this.state.decimal) {
+          if (this.state.currentNum1.length === 0) {
+            let joined = this.state.currentNum1.concat("0.");
+            this.setState(state => ({ decimal: true, currentNum1: joined }))
+          } else if (this.state.currentNum1[this.state.currentNum1.length-1] === "*" | this.state.currentNum1[this.state.currentNum1.length-1] === "/" | this.state.currentNum1[this.state.currentNum1.length-1] === "+" | this.state.currentNum1[this.state.currentNum1.length-1] === "-" | this.state.currentNum1[this.state.currentNum1.length-1] === "." ) {
+        console.log("cannot print decimal after operator")
+          } else {
+            let joined = this.state.currentNum1.concat(".");
+            this.setState(state => ({ decimal: true, currentNum1: joined }))
+          }
+        } else if (this.state.decimal) {
+          console.log("cannot print two decimal in a number")
+        }
+      }
+      pressedClear() {
+        this.setState(state => ({ decimal: false, currentNum1: [], result: [] }))
+      }
+      pressedAdd() { if (this.state.currentNum1.length === 0) {
+        console.log("cannot print operator at start")
+      } else if (this.state.currentNum1[this.state.currentNum1.length-1] === "*" | this.state.currentNum1[this.state.currentNum1.length-1] === "/" | this.state.currentNum1[this.state.currentNum1.length-1] === "+" | this.state.currentNum1[this.state.currentNum1.length-1] === "-" | this.state.currentNum1[this.state.currentNum1.length-1] === "." ) {
+        console.log("cannot print two operators in a row")
+      } else {
+        let joined = this.state.currentNum1.concat("+");
+        this.setState(state => ({ currentNum1: joined }))}
+      }
+      pressedSubstract() { if (this.state.currentNum1[this.state.currentNum1.length-1] === "+" | this.state.currentNum1[this.state.currentNum1.length-1] === "-" | this.state.currentNum1[this.state.currentNum1.length-1] === "." ) {
+        console.log("cannot print after operator or decimal")
+      } else {
+        let joined = this.state.currentNum1.concat("-");
+        this.setState(state => ({ currentNum1: joined }))}
+      }
+      pressedDivide() { if (this.state.currentNum1.length === 0) {
+        console.log("cannot print operator at start")
+      } else if (this.state.currentNum1[this.state.currentNum1.length-1] === "*" | this.state.currentNum1[this.state.currentNum1.length-1] === "/" | this.state.currentNum1[this.state.currentNum1.length-1] === "+" | this.state.currentNum1[this.state.currentNum1.length-1] === "-" | this.state.currentNum1[this.state.currentNum1.length-1] === "." ) {
+        console.log("cannot print two operators in a row")
+      } else {
+        let joined = this.state.currentNum1.concat("/");
+        this.setState(state => ({ currentNum1: joined }))}
+      }
+      pressedMultiply() { if (this.state.currentNum1.length === 0) {
+        console.log("cannot print operator at start")
+      } else if (this.state.currentNum1[this.state.currentNum1.length-1] === "*" | this.state.currentNum1[this.state.currentNum1.length-1] === "/" | this.state.currentNum1[this.state.currentNum1.length-1] === "+" | this.state.currentNum1[this.state.currentNum1.length-1] === "-" | this.state.currentNum1[this.state.currentNum1.length-1] === "." ) {
+        console.log("cannot print two operators in a row")
+      } else {
+        let joined = this.state.currentNum1.concat("*");
+        this.setState(state => ({ currentNum1: joined }))}
+      }
+      pressedBackSpace() { if (this.state.currentNum1.length === 0) {
+        console.log("nothing to erase")
+      } else if (this.state.currentNum1.length > 0) {
+        let poped = this.state.currentNum1;
+        poped.pop()
+        this.setState(state => ({ currentNum1: poped }))
+      }
+      }
+
+      render() {
+        const digits1 = this.state.currentNum1
+        //const firstInt = digits1.reduce((accum, digit) => (accum * 10) + digit, 0)
+        const firstInt = digits1.join("")
+
+        return (
+
+          <div id="bg">
+            <div class="inner-container" id="drum-machine">
+              <div class="pad-bank">
+                <div class="display">
+                  <div id="display">
+                    <div>{this.state.result}</div>
+                    <div>{firstInt}</div>
+                    </div>
+                </div>
+                <div class="number">
+                  <button id="one" onClick={this.pressedDigit1}>1</button>
+                  <button id="two" onClick={this.pressedDigit2}>2</button>
+                  <button id="three" onClick={this.pressedDigit3}>3</button>
+                  <button id="four" onClick={this.pressedDigit4}>4</button>
+                  <button id="five" onClick={this.pressedDigit5}>5</button>
+                  <button id="six" onClick={this.pressedDigit6}>6</button>
+                  <button id="seven" onClick={this.pressedDigit7}>7</button>
+                  <button id="eight" onClick={this.pressedDigit8}>8</button>
+                  <button id="nine" onClick={this.pressedDigit9}>9</button>
+                </div>
+                <div class="operator">
+                  <button id="sustract" onClick={this.pressedSubstract}>-</button>
+                  <button id="add" onClick={this.pressedAdd}>+</button>
+                  </div>
+                <div class="clear">
+                  <button id="clear" onClick={this.pressedClear}>AC</button>
+                  <button id="backSpace" onClick={this.pressedBackSpace}>Back</button>
+                </div>
+
+                <div class="operator2">
+                  <button id="divide" onClick={this.pressedDivide}>/</button>
+                  <button id="multiply" onClick={this.pressedMultiply}>x</button>
+                </div>
+                <div class="zeroToHero">
+                  <button id="zero" onClick={this.pressedDigit0}>0</button>
+                </div>
+                <div class="decimal">
+                  <button id="decimal" onClick={this.pressedDecimal}>.</button>
+
+                </div>
+                <div class="equal">
+                  <button id="equals">=</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      }
+    };
+
+
+
+      const container = document.getElementById('root');
+      const root = ReactDOM.createRoot(container);
+      root.render(<App />);
+
+    </script>
+    <!--
+      Note: this page is a great way to try React but it's not suitable for production.
+      It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+      Read this page for starting a new React project with JSX:
+      https://react.dev/learn/start-a-new-react-project
+
+      Read this page for adding React with JSX to an existing project:
+      https://react.dev/learn/add-react-to-an-existing-project
+    -->
+  </body>
 </html>
